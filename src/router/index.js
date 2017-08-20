@@ -28,6 +28,11 @@ export default new Router({
   mode: 'history',
   routes: [
     {
+      path: '/',
+      component: home,
+      redirect: {name: 'home'},
+    },
+    {
       path: '/home',
       name: 'home',
       component: home,
