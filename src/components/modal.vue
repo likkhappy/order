@@ -12,7 +12,7 @@
 
               <div class="modal-footer" :class="{'border-none': !ok.show && !cancel.show}">
                   <slot name="footer">
-                      <button class="modal-default-button modal-button-ok" :class="{'border-none': !cancel.show}" v-show="ok.show" @click="ok.callback()">
+                      <button class="modal-default-button modal-button-ok"  :class="[{'border-none': !cancel.show}, ok.showClass]" v-show="ok.show" @click="ok.callback.call($parent)">
                           {{ ok.text }}
                       </button>
 
@@ -54,9 +54,11 @@ export default {
           type: Object,
           default: function() {
               return {
+                  callSelf: this,
                   show: false,
                   text: 'Ok',
                   callback: function() {
+                    console.log('ok');
                       this.show = false;
                   }
               };
@@ -198,7 +200,7 @@ $first-button-bd-color: #cdc7c7;
 
         &:first-child {
             border-right: 1px solid $first-button-bd-color;
-            color: $first-button-color;
+            color: #fff;
         }
     }
 
@@ -215,5 +217,9 @@ $first-button-bd-color: #cdc7c7;
       transform: scale(1.1);
         // @include transform(scale(1.1));
     }
+}
+.ok {
+  background: #387ef5;
+  color: #fff;
 }
 </style>
