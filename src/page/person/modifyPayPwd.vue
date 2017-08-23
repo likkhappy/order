@@ -19,12 +19,6 @@
         <input type="number" readonly v-model="phone" class="p-style">
       </div>
     </modify>
-    <modify :show-icon="false" :path-param="null" add-class="show-b">
-      <div class="origin-pwd" slot="modify-con">
-        <span>图片验证码:</span>
-        <input type="password">
-      </div>
-    </modify>
     <modify :show-icon="false" :path-param="null" >
       <div class="origin-pwd" slot="modify-con">
         <span>短信验证码:</span>

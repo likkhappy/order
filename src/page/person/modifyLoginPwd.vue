@@ -5,7 +5,7 @@
       <div class="origin-pwd" slot="modify-con">
         <span>原始密码:</span>
         <input type="password">
-        <router-link :to="{ name: '', params: {} }" class="forget-pwd">忘记密码？</router-link>
+        <router-link :to="{ name: 'forget-pwd'}" class="forget-pwd">忘记密码？</router-link>
       </div>
     </modify>
     <modify :show-icon="false" :path-param="null" add-class="show-b">
